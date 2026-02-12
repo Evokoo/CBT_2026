@@ -1,4 +1,5 @@
 import type { Setter, Accessor } from "solid-js";
+import type { SetStoreFunction } from "solid-js/store";
 
 export interface Entry {
   id: string;
@@ -30,4 +31,9 @@ export interface TextareaProps {
   placeholder: string;
   value: Accessor<string>;
   onInputFn: Setter<string>;
+}
+
+export interface Store {
+  setEntries: SetStoreFunction<{ entries: Entry[] }>;
+  getEntries: { entries: Entry[] };
 }
