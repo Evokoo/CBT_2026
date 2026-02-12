@@ -1,0 +1,32 @@
+#DistortionBlock {
+  display: flex;
+  flex-wrap: wrap; // wrap buttons to new lines if needed
+  gap: 8px; // space between buttons
+  margin-bottom: 16px;
+  width: 30%;
+
+  button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: $grey;
+    cursor: pointer;
+    transition:
+      background-color 0.5s,
+      color 0.5s;
+
+    &.selected {
+      background-color: $green;
+      color: white;
+      border-color: $green;
+    }
+
+    &:not(.selected):hover {
+      background-color: color.adjust($grey, $lightness: -10%);
+    }
+
+    &:is(.selected):hover {
+      background-color: color.adjust($green, $lightness: -10%);
+    }
+  }
+}

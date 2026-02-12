@@ -1,0 +1,40 @@
+.container {
+  background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  .topRow {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .icon {
+      cursor: pointer;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .textarea {
+    border-radius: 5px;
+    padding: 0.5em;
+    font-family: inherit;
+    resize: vertical;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: blue;
+    }
+  }
+}

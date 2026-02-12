@@ -1,0 +1,59 @@
+.title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.entry {
+  height: 100%;
+  scroll-snap-align: start;
+  padding: inherit;
+  display: flex;
+  flex-direction: column;
+  background: burlywood;
+  gap: 1em;
+
+  //Text Display
+  > div:nth-child(1),
+  > div:nth-child(3) {
+    // background-color: bisque;
+  }
+
+  //Distortions
+  > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+
+      span {
+        background-color: #ddd;
+        padding: 0.25em 0.5em;
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  //Footer
+  > div:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+
+    //Buttons
+    > :first-child {
+      display: flex;
+      gap: 1em;
+    }
+
+    //Timestamps
+    > :last-child {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
