@@ -1,18 +1,24 @@
+//Core & Router
 import { createSignal, onMount } from "solid-js";
-import type { Entry, TextareaProps } from "../types";
-import { DistortionButtons } from "../components/DistortionButtons";
-import { Textarea } from "../components/Textarea";
-
-import { distortions } from "../data/distortions";
-import { newEntry } from "../utils";
+import { useNavigate, useParams } from "@solidjs/router";
+//Data
 import { getEntry, saveEntry } from "../data/database";
 import { setEntries } from "../data/store";
-import { useNavigate, useParams } from "@solidjs/router";
+import { distortions } from "../data/distortions";
+//Components
+import { DistortionButtons } from "../components/DistortionButtons";
+import { Textarea } from "../components/Textarea";
+//Utils & Types
+import { newEntry } from "../utils";
+import type { Entry, TextareaProps } from "../types";
 
 //Constants
 const DISTORTION_COUNT = distortions.length;
 
 export default function FormPage() {
+  //Routing
+  const params = useParams();
+  const navigate = useNavigate();
   //State
   const [id, setID] = createSignal<string | null>(null);
   const [creation, setCreation] = createSignal<Date | null>(null);
@@ -21,10 +27,6 @@ export default function FormPage() {
   const [selection, setSelection] = createSignal(
     Array(DISTORTION_COUNT).fill(0),
   );
-
-  const params = useParams();
-  const navigate = useNavigate();
-
   //Logic
   function clearFields() {
     setID(null);

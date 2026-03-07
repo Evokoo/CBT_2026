@@ -1,0 +1,28 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers main horizontally */
+  min-height: 100vh; /* ensures footer at bottom */
+  gap: 1em;
+}
+
+main {
+  width: 95%;
+  max-width: 800px; /* optional, limits content width */
+}
+
+header,
+footer {
+  display: flex;
+  align-items: center;
+  width: 100%; /* or just remove width */
+  max-width: 800px;
+  background-color: aqua;
+}

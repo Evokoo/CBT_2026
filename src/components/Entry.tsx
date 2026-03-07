@@ -5,7 +5,7 @@ import { getDistortions } from "../data/distortions";
 //Types
 import type { EntryListProps } from "../types";
 //Style
-import $ from "./EntryList.module.scss";
+import $ from "./Entry.module.scss";
 
 export function EntryList({ entry, onDelete, onEdit }: EntryListProps) {
   return (
