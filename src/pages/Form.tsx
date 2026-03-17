@@ -11,6 +11,8 @@ import { Textarea } from "../components/Textarea";
 //Utils & Types
 import { newEntry } from "../utils";
 import type { Entry, TextareaProps } from "../types";
+//Styles
+import $ from "./Form.module.scss";
 
 //Constants
 const DISTORTION_COUNT = distortions.length;
@@ -72,25 +74,27 @@ export default function FormPage() {
 
   // Context
   const thoughtInputProps: TextareaProps = {
-    title: "Test Title",
+    title: "Initial Thought",
     placeholder: "Initial Thought",
     value: thought,
     onInputFn: setThought,
   };
   const responseInputProps: TextareaProps = {
-    title: "Test Title",
-    placeholder: "Processed thought",
+    title: "Rational Response",
+    placeholder: "Rational Response",
     value: response,
     onInputFn: setResponse,
   };
 
   return (
-    <div>
+    <div class={$.entryForm}>
       <Textarea {...thoughtInputProps} />
       <DistortionButtons selection={selection} setSelection={setSelection} />
       <Textarea {...responseInputProps} />
-      <button onClick={addEntry}>{id() !== null ? "Update" : "Save"}</button>
-      <button onClick={clearFields}>Clear</button>
+      <div>
+        <button onClick={addEntry}>{id() !== null ? "Update" : "Save"}</button>
+        <button onClick={clearFields}>Clear</button>
+      </div>
     </div>
   );
 }

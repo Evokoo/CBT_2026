@@ -1,0 +1,17 @@
+@use "../styles/mixins" as mixins;
+@use "../styles/colours" as colours;
+
+.entryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  div:last-child {
+    display: flex;
+    gap: 5px;
+
+    button {
+      @include mixins.button;
+    }
+  }
+}

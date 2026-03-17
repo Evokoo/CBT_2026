@@ -13,7 +13,7 @@ export function Textarea(props: TextareaProps) {
         placeholder={props.placeholder}
         value={props.value()}
         onInput={(e) => props.onInputFn(e.target.value)}
-        rows={5}
+        rows={8}
       />
     </div>
   );

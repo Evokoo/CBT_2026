@@ -1,40 +1,41 @@
-.container {
-  background-color: burlywood;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+@use "../styles/colours" as colours;
+@use "sass:color";
 
-  .topRow {
+.container {
+  div {
     display: flex;
     justify-content: space-between;
-
-    .title {
-      font-size: 0.9rem;
-      font-weight: 500;
-      opacity: 0.8;
-    }
+    padding-bottom: 5px;
 
     .icon {
       cursor: pointer;
-      opacity: 0.6;
-
-      &:hover {
-        opacity: 1;
-      }
     }
   }
 
-  .textarea {
-    border-radius: 5px;
-    padding: 0.5em;
-    font-family: inherit;
-    resize: vertical;
-    border: 1px solid #ccc;
+  textarea {
+    width: 100%;
+    max-width: 800px;
+    padding: 8px;
+
+    border: 2px solid colours.$primary-dark;
+    background-color: colours.$primary-light;
+    color: colours.$primary-dark;
+
     outline: none;
-    transition: border-color 0.2s ease;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+
+    box-sizing: border-box;
 
     &:focus {
-      border-color: blue;
+      border-color: colours.$primary-dark;
+      box-shadow: 0 0 0 2px rgba(40, 38, 44, 0.15);
+    }
+
+    &:focus-visible {
+      /* Optional for accessibility: shows focus ring for keyboard users only */
+      box-shadow: 0 0 0 2px rgba(40, 38, 44, 0.2);
     }
   }
 }

@@ -1,0 +1,54 @@
+@use "sass:color";
+
+@use "../styles/mixins" as mixins;
+@use "../styles/colours" as colours;
+
+.distortions {
+  :nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+
+    .title {
+      padding: 0;
+    }
+
+    .icon {
+      cursor: pointer;
+    }
+  }
+
+  :nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+
+    button {
+      @include mixins.button;
+
+      flex: 1 1 120px; // flex-grow:1, flex-shrink:1, base width: 120px
+      max-width: 200px; // won’t get too wide
+      min-width: 80px; // won’t get too small
+
+      &.selected {
+        background-color: colours.$primary-dark;
+        color: colours.$primary-light;
+      }
+
+      &:not(.selected):hover {
+        background-color: color.adjust(
+          colours.$primary-light,
+          $lightness: -10%
+        );
+        color: color.adjust(colours.$primary-dark, $lightness: -10%);
+      }
+
+      &:is(.selected):hover {
+        background-color: color.adjust(colours.$primary-dark, $lightness: 10%);
+        border-color: color.adjust(colours.$primary-dark, $lightness: 10%);
+        color: colours.$primary-light;
+      }
+    }
+  }
+}

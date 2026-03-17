@@ -1,0 +1,23 @@
+@use "sass:color";
+@use "./colours" as colours;
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  // word-break: break-word;
+
+  font-size: 0.8em;
+  cursor: pointer;
+  background-color: colours.$primary-light;
+  color: colours.$primary-dark;
+  border: 2px solid colours.$primary-dark;
+  padding: 4px 8px;
+
+  &:hover {
+    background-color: color.adjust(colours.$primary-light, $lightness: -10%);
+    // color: color.adjust(colours.$primary-dark, $lightness: -10%);
+  }
+}
