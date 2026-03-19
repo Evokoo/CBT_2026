@@ -3,29 +3,29 @@ import { For } from "solid-js";
 //Data
 import { getDistortions } from "../data/distortions";
 //Types
-import type { EntryListProps } from "../types";
+import type { EntryProps } from "../types";
 //Style
 import $ from "./Entry.module.scss";
 
-export function EntryList({ entry, onDelete, onEdit }: EntryListProps) {
+export function Entry({ entry, onDelete, onEdit }: EntryProps) {
   return (
     <div class={$.entry}>
       <div>
-        <span class={$.title}>Initial Thought</span>
+        <h5>Initial Thought</h5>
         <p>{entry.thought}</p>
       </div>
 
       <div>
-        <span class={$.title}>Distortions</span>
+        <h5>Distortions</h5>
         <div>
           <For each={getDistortions(entry.distortions)}>
-            {(e) => <span>{e}</span>}
+            {(e) => <button>{e}</button>}
           </For>
         </div>
       </div>
 
       <div>
-        <span class={$.title}>Rational Response</span>
+        <h5>Rational Response</h5>
         <p>{entry.response}</p>
       </div>
 

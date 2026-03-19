@@ -15,7 +15,7 @@ export interface Distortion {
   description?: string;
 }
 
-export interface EntryListProps {
+export interface EntryProps {
   entry: Entry;
   onDelete: (id: string) => void;
   onEdit: (id: string) => void;

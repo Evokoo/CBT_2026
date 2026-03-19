@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "./colours" as colours;
+@use "./colours" as c;
 
 @mixin button {
   display: flex;
@@ -7,17 +7,21 @@
   justify-content: center;
   text-align: center;
   white-space: normal;
-  // word-break: break-word;
 
   font-size: 0.8em;
   cursor: pointer;
-  background-color: colours.$primary-light;
-  color: colours.$primary-dark;
-  border: 2px solid colours.$primary-dark;
+  background-color: c.$primary-light;
+  color: c.$primary-dark;
+  border: 2px solid c.$primary-dark;
   padding: 4px 8px;
 
+  transition: ease-in-out background-color 0.1s;
+
   &:hover {
-    background-color: color.adjust(colours.$primary-light, $lightness: -10%);
+    background-color: color.adjust(c.$primary-light, $lightness: -10%);
     // color: color.adjust(colours.$primary-dark, $lightness: -10%);
+
+    // box-shadow: 2px 2px 0px c.$primary-dark;
+    // transform: translate(-2px, -2px); // Subtle lift when active
   }
 }

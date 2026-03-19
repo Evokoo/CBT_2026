@@ -5,7 +5,7 @@ export function Textarea(props: TextareaProps) {
   return (
     <div class={$.container}>
       <div class={$.topRow}>
-        <span class={$.title}>{props.title}</span>
+        <h5>{props.title}</h5>
         <span class={$.icon}>Icon</span>
       </div>
       <textarea

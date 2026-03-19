@@ -42,11 +42,12 @@ export default function FormPage() {
 
     if (id() === null) {
       entry = newEntry(thought(), response(), selection());
-      setEntries("entries", (n) => [...n, entry]);
+      setEntries((n) => [...n, entry]);
     } else {
       entry = newEntry(thought(), response(), selection(), id()!, creation()!);
-      setEntries("entries", (n) => n.map((e) => (e.id === id() ? entry : e)));
+      setEntries((n) => n.map((e) => (e.id === id() ? entry : e)));
     }
+
     await saveEntry(entry);
     navigate("/entries");
   }

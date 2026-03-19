@@ -1,15 +1,21 @@
-@use "./styles/colours" as colours;
+@use "./styles/colours" as c;
 
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
-  background-color: colours.$primary-light;
+  background-color: c.$primary-light;
 
   font-family:
-    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  font-family: "Lexend", sans-serif;
   font-size: 1em;
 }
 
@@ -32,5 +38,18 @@ footer {
   align-items: center;
   width: 100%; /* or just remove width */
   max-width: 800px;
-  background-color: aqua;
+  min-height: 50px;
+
+  background-color: c.$primary-dark;
+  color: c.$primary-light;
+
+  a {
+    color: c.$primary-light;
+    text-decoration: none;
+    padding-right: 2em;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
 }

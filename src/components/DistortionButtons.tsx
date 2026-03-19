@@ -20,7 +20,7 @@ export function DistortionButtons({
   return (
     <div class={$.distortions}>
       <div>
-        <span class={$.title}>Distortions</span>
+        <h5>Distortions</h5>
         <span class={$.icon}>Icon</span>
       </div>
       <div>

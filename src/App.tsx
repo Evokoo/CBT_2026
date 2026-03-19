@@ -10,14 +10,8 @@ export default function App() {
   return (
     <>
       <header>
-        <ul>
-          <li>
-            <a href="/">New Item</a>
-          </li>
-          <li>
-            <a href="/entries">Entries</a>
-          </li>
-        </ul>
+        <a href="/">New Item</a>
+        <a href="/entries">Entries</a>
       </header>
       <main>
         <Router>

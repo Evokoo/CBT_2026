@@ -1,59 +1,63 @@
-.title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  opacity: 0.8;
-}
+@use "../styles/mixins" as mx;
+@use "../styles/colours" as c;
 
 .entry {
-  height: 100%;
-  scroll-snap-align: start;
-  padding: inherit;
   display: flex;
   flex-direction: column;
-  background: burlywood;
   gap: 1em;
+  padding: 5px;
 
-  //Text Display
-  > div:nth-child(1),
-  > div:nth-child(3) {
-    // background-color: bisque;
-  }
+  border: 2px solid c.$primary-dark;
 
-  //Distortions
   > div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-
     > div {
+      margin: 1em 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5em;
+      justify-content: start;
+      gap: 5px;
 
-      span {
-        background-color: #ddd;
-        padding: 0.25em 0.5em;
-        border-radius: 4px;
-        font-size: 0.85rem;
+      button {
+        @include mx.button;
+
+        background-color: c.$primary-dark;
+        color: c.$primary-light;
+        cursor: default;
+
+        &:hover {
+          background-color: c.$primary-dark;
+          color: c.$primary-light;
+        }
       }
     }
   }
-
-  //Footer
   > div:nth-child(4) {
     display: flex;
     justify-content: space-between;
 
-    //Buttons
-    > :first-child {
+    > div:nth-child(1) {
       display: flex;
-      gap: 1em;
+      gap: 5px;
+      button {
+        @include mx.button;
+      }
     }
-
-    //Timestamps
-    > :last-child {
+    > div:nth-child(2) {
       display: flex;
       flex-direction: column;
+      span {
+        font-size: x-small;
+      }
     }
   }
+}
+
+p {
+  font-size: 0.8em;
+  color: c.$primary-dark;
+}
+
+h5 {
+  margin: 0 0 1em 0;
+  color: c.$primary-dark;
 }
