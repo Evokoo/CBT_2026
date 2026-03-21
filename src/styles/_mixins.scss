@@ -15,7 +15,8 @@
   border: 2px solid c.$primary-dark;
   padding: 4px 8px;
 
-  transition: ease-in-out background-color 0.1s;
+  box-shadow: 0 0 0 c.$primary-dark;
+  transform: translate(0, 0);
 
   &:hover {
     background-color: color.adjust(c.$primary-light, $lightness: -10%);

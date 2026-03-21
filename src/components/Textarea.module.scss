@@ -1,4 +1,6 @@
 @use "../styles/colours" as c;
+@use "../styles/animation" as a;
+
 @use "sass:color";
 
 .container {
@@ -22,26 +24,13 @@
     color: c.$primary-dark;
 
     outline: none;
-    transition:
-      border-color 0.2s,
-      box-shadow 0.2s;
-
     box-sizing: border-box;
 
-    // &:focus {
-    //   border-color: colours.$primary-dark;
-    //   box-shadow: 0 0 0 2px rgba(40, 38, 44, 0.15);
-    // }
+    @include a.box-selection(0, 0);
+    transition: a.$box-selection-animation;
 
     &:focus {
-      // Instead of a soft glow, let's do a hard "Sticker" shadow
-      box-shadow: 6px 6px 0px c.$primary-dark;
-      transform: translate(-2px, -2px); // Subtle lift when active
+      @include a.box-selection(5px, -2px);
     }
-
-    // &:focus-visible {
-    //   /* Optional for accessibility: shows focus ring for keyboard users only */
-    //   box-shadow: 0 0 0 2px rgba(40, 38, 44, 0.2);
-    // }
   }
 }

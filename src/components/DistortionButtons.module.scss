@@ -2,6 +2,7 @@
 
 @use "../styles/mixins" as mx;
 @use "../styles/colours" as c;
+@use "../styles/animation" as a;
 
 .distortions {
   :nth-child(1) {
@@ -31,20 +32,16 @@
       max-width: 200px; // won’t get too wide
       min-width: 80px; // won’t get too small
 
+      transition: a.$box-selection-animation;
+
       &.selected {
-        background-color: c.$primary-dark;
-        color: c.$primary-light;
+        @include a.box-selection;
+        background-color: color.adjust(c.$primary-light, $lightness: -10%);
       }
 
       &:not(.selected):hover {
         background-color: color.adjust(c.$primary-light, $lightness: -10%);
         color: color.adjust(c.$primary-dark, $lightness: -10%);
-      }
-
-      &:is(.selected):hover {
-        background-color: color.adjust(c.$primary-dark, $lightness: 10%);
-        border-color: color.adjust(c.$primary-dark, $lightness: 10%);
-        color: c.$primary-light;
       }
     }
   }

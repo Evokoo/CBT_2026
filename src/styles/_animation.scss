@@ -1,0 +1,10 @@
+@use "./colours" as c;
+
+@mixin box-selection($shadow: 2px, $transform: -2px) {
+  box-shadow: $shadow $shadow 0px c.$primary-dark;
+  transform: translate($transform, $transform);
+}
+$box-selection-animation:
+  box-shadow 0.2s ease,
+  transform 0.2s ease,
+  background-color 0.2s ease;
