@@ -1,12 +1,13 @@
 import type { TextareaProps } from "../types";
 import $ from "./Textarea.module.scss";
+import Icon from "./Icon";
 
 export function Textarea(props: TextareaProps) {
   return (
     <div class={$.container}>
       <div class={$.topRow}>
         <h5>{props.title}</h5>
-        <span class={$.icon}>Icon</span>
+        <Icon symbol="help" class={$.icon} />
       </div>
       <textarea
         class={$.textarea}

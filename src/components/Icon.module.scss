@@ -1,0 +1,12 @@
+@use "../styles/colours" as c;
+@use "sass:color";
+
+.icon {
+  color: c.$primary-dark;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.clickable {
+  cursor: pointer;
+}

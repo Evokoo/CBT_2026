@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import { distortions } from "../data/distortions";
 import type { DistortionButtonsProps } from "../types";
 import $ from "./DistortionButtons.module.scss";
+import Icon from "./Icon";
 
 export function DistortionButtons({
   selection,
@@ -21,7 +22,7 @@ export function DistortionButtons({
     <div class={$.distortions}>
       <div>
         <h5>Distortions</h5>
-        <span class={$.icon}>Icon</span>
+        <Icon symbol="help" class={$.icon} />
       </div>
       <div>
         <For each={distortions}>

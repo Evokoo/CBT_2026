@@ -6,6 +6,7 @@ import { getDistortions } from "../data/distortions";
 import type { EntryProps } from "../types";
 //Style
 import $ from "./Entry.module.scss";
+import Icon from "./Icon";
 
 export function Entry({ entry, onDelete, onEdit }: EntryProps) {
   return (
@@ -31,8 +32,14 @@ export function Entry({ entry, onDelete, onEdit }: EntryProps) {
 
       <div>
         <div>
-          <button onClick={() => onEdit(entry.id)}>Edit Entry</button>
-          <button onClick={() => onDelete(entry.id)}>Delete Entry</button>
+          <Icon symbol="edit" class={$.icon} onClick={() => onEdit(entry.id)} />
+          <Icon
+            symbol="delete"
+            class={$.icon}
+            onClick={() => onDelete(entry.id)}
+          />
+          {/* <button onClick={() => onEdit(entry.id)}>Edit Entry</button>
+          <button onClick={() => onDelete(entry.id)}>Delete Entry</button> */}
         </div>
         <div>
           <span>Created: {entry.created.toLocaleString()}</span>
